@@ -1,34 +1,5 @@
 //Jueves 13 jul
 #include "mydefs.h"
-estructura_mental mindset;  //struct
-//void func (void* input);  //ignore this for the moment
-int main(void) {
-  
-  estructura_mental* ptr; // apuntador a struct
-  ptr = &mindset;         // que es esto?
-  
-  /* --------------------<-aqui */
-  
-  if(ptr->informacion == (CONOCIMIENTO + VERDAD)) {
-     ptr->era_actual = POST_VERDAD;
-  } else {
-    ptr->informacion = 0xfa; //update info
-                             //information == truth ?
-  } 
-  //ptr->state_machine=func;
-  //ptr->state_machine(0);
-}
-//question: 
-//1. if true | false ?
-//2. cual deberia ser el valor de la informacion
-//para que era_actual sea POST_VERDAD? linea 13
-//tips
-//mindset.informacion = x;
-//ptr->informacion= x;
-//void func (void* input)
-//{
-//  //Do magic stuff
-//}
 
 //Jueves 6 jul
 //git clone https://github.com/javierzavalaponce/honeywell_1stweek.git
@@ -40,20 +11,50 @@ int main(void) {
 //#pragma optimize=none
 //int main()
 //{
-//  unsigned int direccion=0; //tamaño de tipo uint?
-//  volatile unsigned int tamano=0;
-//  tamano =  sizeof(arreglo);
-//  tamano =  sizeof(unsigned int);
-//  arreglo[0] = '3';
-//  *(arreglo+4) = 1; //* lo que tiene adx NOMBRE del arreglo es..
-//  *(unsigned int*)(arreglo+4) = 2;
-//  direccion = (unsigned int)arreglo; //1. Que hace esta linea
+//  unsigned int direccion=0;   
+//  //Objetivo: siguiente linea
+//  //nota 0x31 = '1'  
+//  *(unsigned int*)(arreglo) = 0x31323334; 
+//  //
+//  direccion = (unsigned int)arreglo;
 //  return direccion; //2. Que hacer para retornar dos variables o mas?
 //}
 
 
 
+boxeador julio_cesar_chavez;
+boxeador juan_manuel_marquez;
 
+void cross_derecha(void);
+void gancho_al_higado(void);
+
+int main(void) {
+  boxeador* direccion;             // apuntador a struct
+  direccion = &julio_cesar_chavez; // puntero toma la direccion de julio_cesar_chavez
+  
+  julio_cesar_chavez.numero_de_peleas  = 150; // punto
+  direccion->numero_de_peleas          = 100; // flecha
+  //Cual es el numero de peleas de julio cesar?..
+  julio_cesar_chavez.punch = gancho_al_higado; //nombre de la funcion tambien es su direccion
+  juan_manuel_marquez.punch = cross_derecha;
+
+  julio_cesar_chavez.punch(); //que funcion se va a ejecutar?
+  juan_manuel_marquez.punch();
+}
+
+void cross_derecha(void)
+{
+  //Do smthing..
+  static unsigned char var = 0;
+  var++;
+}
+
+void gancho_al_higado(void)
+{
+  //Do smthing..
+  static unsigned char j = 0;
+  j++;
+}
 
 
 
